@@ -8,9 +8,31 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
+const SITE_URL = 'https://vics-ugc-production.up.railway.app';
+const TITLE = "Vic's UGC — Free AI Image & Video Studio";
+const DESCRIPTION = 'Generate AI images and videos using 200+ models — Flux, Midjourney, Kling, Veo, Seedance and more.';
+
+// Link previews (Slack, WhatsApp, X, iMessage) read these from the server
+// response, so they can't rely on any client-side rebranding. The marketing
+// page at `/` carries its own copy of the same tags in its static <head>.
 export const metadata = {
-  title: "Vic's UGC — Free AI Image & Video Studio",
-  description: 'Generate AI images and videos using 200+ models — Flux, Midjourney, Kling, Veo, Seedance and more.',
+  metadataBase: new URL(SITE_URL),
+  title: TITLE,
+  description: DESCRIPTION,
+  openGraph: {
+    type: 'website',
+    siteName: "Vic's UGC",
+    url: SITE_URL,
+    title: TITLE,
+    description: DESCRIPTION,
+    images: [{ url: '/marketing/og-vics-ugc.jpg', width: 1200, height: 630, alt: TITLE }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: TITLE,
+    description: DESCRIPTION,
+    images: ['/marketing/og-vics-ugc.jpg'],
+  },
 };
 
 export default async function RootLayout({ children }) {

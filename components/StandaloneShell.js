@@ -602,6 +602,17 @@ export default function StandaloneShell({ locale = 'en' }) {
     document.cookie = "muapi_key=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT";
   }, []);
 
+  // The stored API key is the studio's whole notion of a session, so logging
+  // out is "forget the key, then leave for the landing page". That page is a
+  // static document served by a middleware rewrite of `/` (see middleware.js),
+  // not an app route, so it needs a full document load rather than a router
+  // push — which also guarantees no studio state survives the sign-out.
+  const handleLogout = useCallback(() => {
+    localStorage.removeItem(STORAGE_KEY);
+    document.cookie = "muapi_key=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT";
+    window.location.href = '/';
+  }, []);
+
   // Inject API key into all outgoing Axios requests (prop-based approach)
   // We use an interceptor to be selective and NOT send the key to external domains like S3
   useEffect(() => {
@@ -972,6 +983,31 @@ export default function StandaloneShell({ locale = 'en' }) {
                   </a>
                 </div>
               )}
+
+              <div className="mt-2">
+                <button
+                  type="button"
+                  onClick={handleLogout}
+                  aria-label={copy.shell.logOut}
+                  title={isSidebarCollapsed && !isMobileOpen ? copy.shell.logOut : undefined}
+                  className={`
+                    group relative flex items-center rounded-xl transition-all duration-150 text-[13px] font-semibold
+                    border border-transparent text-white/60 hover:text-red-300 hover:bg-red-500/[0.08]
+                    ${isSidebarCollapsed && !isMobileOpen ? 'h-11 w-11 justify-center mx-auto' : 'px-3 py-2.5 w-full gap-3'}
+                  `}
+                >
+                  <span className="flex-shrink-0 text-white/50 group-hover:text-red-300">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+                      <polyline points="16 17 21 12 16 7"/>
+                      <line x1="21" y1="12" x2="9" y2="12"/>
+                    </svg>
+                  </span>
+                  {(!isSidebarCollapsed || isMobileOpen) && (
+                    <span className="truncate">{copy.shell.logOut}</span>
+                  )}
+                </button>
+              </div>
             </nav>
           </aside>
         )}

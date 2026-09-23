@@ -1,0 +1,46 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Electron build output
+release/
+.webpack/
+
+# Next.js
+.next/
+out/
+
+# Misc
+*.pem
+.env
+.env.*
+!.env.example
+
+# Local scratch media accidentally saved into route directories.
+# Screen recordings and sample clips that no code references — kept on
+# disk, excluded from the repo (one exceeds GitHub's 100 MB file limit).
+/app/**/*.mov
+/app/**/*.MOV
+/app/**/*.mp4
+/app/**/*.MP4

@@ -4,7 +4,7 @@
  * The api key is available via the muapi_key cookie which StandaloneShell sets.
  */
 export const metadata = {
-  title: "Agent Chat — Vic's UGC",
+  title: "Agent Chat — Frameo",
 };
 
 export default function AgentsLayout({ children }) {

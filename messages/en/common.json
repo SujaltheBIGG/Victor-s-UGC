@@ -24,7 +24,7 @@
     "agents-automation": "Agents & Automation"
   },
   "shell": {
-    "brand": "Vic's UGC",
+    "brand": "Frameo",
     "studioFallback": "Studio",
     "expandSidebar": "Expand sidebar",
     "collapseSidebar": "Collapse sidebar",
@@ -56,7 +56,7 @@
     "ariaLabel": "Generation activity and notifications"
   },
   "apiKeyModal": {
-    "title": "Vic's UGC",
+    "title": "Frameo",
     "subtitlePrefix": "Enter your",
     "subtitleSuffix": "API key to start creating",
     "close": "Close",

@@ -6,7 +6,7 @@ const { register: registerWan2gp } = require('./lib/wan2gpProvider');
 process.on('uncaughtException', (err) => {
     console.error('Uncaught exception:', err);
     try {
-        dialog.showErrorBox("Vic's UGC — Unexpected Error", err && err.stack ? err.stack : String(err));
+        dialog.showErrorBox("Frameo — Unexpected Error", err && err.stack ? err.stack : String(err));
     } catch (_) {
         // dialog unavailable this early; the console log above is the fallback
     }
@@ -40,7 +40,7 @@ function createWindow() {
         ...(isMac ? { titleBarStyle: 'hiddenInset' } : {}),
         backgroundColor: '#0d0d0d',
         show: false,
-        title: "Vic's UGC",
+        title: "Frameo",
     });
 
     const indexPath = path.join(__dirname, '../dist/index.html');
@@ -77,7 +77,7 @@ app.whenReady().then(() => {
         console.error('Failed to register local-ai/wan2gp handlers:', err);
         dialog.showErrorBox(
             'Local AI features unavailable',
-            `Vic's UGC started, but local model support failed to initialize:\n\n${err.message}`
+            `Frameo started, but local model support failed to initialize:\n\n${err.message}`
         );
     }
 

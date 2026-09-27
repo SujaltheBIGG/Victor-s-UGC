@@ -1,4 +1,4 @@
-# Vic's UGC
+# Frameo
 
 The creative platform to direct your best work — AI image, video, audio and
 cinema generation behind a single studio interface.

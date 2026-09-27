@@ -1,7 +1,7 @@
 import StandaloneShell from '@/components/StandaloneShell';
 
 export const metadata = {
-  title: "Workflow — Vic's UGC",
+  title: "Workflow — Frameo",
 };
 
 export default function WorkflowTabPage() {

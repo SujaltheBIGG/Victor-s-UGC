@@ -1,7 +1,7 @@
 import StandaloneShell from '@/components/StandaloneShell';
 
 export const metadata = {
-  title: "Studio — Vic's UGC",
+  title: "Studio — Frameo",
 };
 
 // Additive locale route wrapper: reuses the exact same shell component as

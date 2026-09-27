@@ -1,7 +1,7 @@
 import StandaloneShell from '@/components/StandaloneShell';
 
 export const metadata = {
-  title: "Studio — Vic's UGC",
+  title: "Studio — Frameo",
 };
 
 export default function StudioPage() {

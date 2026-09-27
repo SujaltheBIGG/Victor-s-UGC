@@ -3,7 +3,7 @@
 The creative platform to direct your best work — AI image, video, audio and
 cinema generation behind a single studio interface.
 
-**Live:** https://vics-ugc-production.up.railway.app
+**Live:** https://frameo-production.up.railway.app
 
 ---
 

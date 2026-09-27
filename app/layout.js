@@ -8,7 +8,7 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
-const SITE_URL = 'https://vics-ugc-production.up.railway.app';
+const SITE_URL = 'https://frameo-production.up.railway.app';
 const TITLE = "Frameo — Free AI Image & Video Studio";
 const DESCRIPTION = 'Generate AI images and videos using 200+ models — Flux, Midjourney, Kling, Veo, Seedance and more.';
 
